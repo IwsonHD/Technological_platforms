@@ -1,0 +1,25 @@
+﻿<Window x:Class="labs10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dataGridCars" AutoGenerateColumns="False" IsReadOnly="False" Margin="10,10,10,110">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" />
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
+                <DataGridTextColumn Header="Displacement" Binding="{Binding Motor.Displacement}" />
+                <DataGridTextColumn Header="HorsePower" Binding="{Binding Motor.HorsePower}" />
+                <DataGridTextColumn Header="Engine Model" Binding="{Binding Motor.Model}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtSearch" Width="200" Height="25" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+        <Button Content="Search" Width="100" Height="30" HorizontalAlignment="Left" Margin="220,330,0,0" VerticalAlignment="Top" Click="btnSearch_Click"/>
+        <Button Content="Reset Search" Width="100" Height="30" HorizontalAlignment="Left" Margin="330,330,0,0" VerticalAlignment="Top" Click="btnResetSearch_Click"/>
+        <Button Content="Add" Width="100" Height="30" HorizontalAlignment="Left" Margin="440,330,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
+        <Button Content="Delete" Width="100" Height="30" HorizontalAlignment="Left" Margin="550,330,0,0" VerticalAlignment="Top" Click="btnDelete_Click"/>
+
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0,10,10" BorderBrush="Gray" BorderThickness="1" Background="LightGray">
+            <TextBlock x:Name="txtLinqResults" TextWrapping="Wrap" Padding="10"/>
+        </Border>
+    </Grid>
+</Window>
